@@ -1,9 +1,12 @@
-{% extends 'base.html.twig' %}
+{# templates/article/show.html.twig #}
+{% extends 'blog_template.html.twig' %}
 
-{% block title %}Article{% endblock %}
+{% block title %}{{ parent() }} Accueil de l'Administration d'Article | Voir l'article{% endblock %}
 
 {% block body %}
-    <h1>Article</h1>
+    {% block content %}
+        <h1>Contenu de l'article n°{{ article.id }}</h1>
+    {% endblock %}
 
     <table class="table">
         <tbody>

@@ -1,9 +1,12 @@
-{% extends 'base.html.twig' %}
+{# templates/category/edit.html.twig #}
+{% extends 'blog_template.html.twig' %}
 
-{% block title %}Edit Category{% endblock %}
+{% block title %}{{ parent() }} Accueil de l'Administration des Catégories | Mise à jour de la catégorie{% endblock %}
 
 {% block body %}
-    <h1>Edit Category</h1>
+    {% block content %}
+        <h1>Mettre à jour la categorie : {{ category.title }}</h1>
+    {% endblock %}
 
     {{ include('category/_form.html.twig', {'button_label': 'Update'}) }}
 
