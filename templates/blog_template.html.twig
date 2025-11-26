@@ -1,0 +1,22 @@
+{# templates/blog_template.html.twig #}
+
+{# on étend base.html.twig #}
+{% extends 'base.html.twig' %}
+
+{# on va modifier le title #}
+{% block title %}Blog |{% endblock %}
+
+{# et réécrire le bloc body pour placer le menu dedans #}
+{% block body %}
+    {% block menu %}
+        <nav>
+            <ul>
+                <li><a href="{{ path('homepage') }}">Accueil</a></li>
+                <li><a href="{{ path('app_article_index') }}">Articles</a></li>
+                <li><a href="{{ path('app_category_index') }}">Categories</a></li>
+            </ul>
+        </nav>
+    {% endblock %}
+    {% block content %}{% endblock %}
+    {% block footer %}{% endblock %}
+{% endblock %}

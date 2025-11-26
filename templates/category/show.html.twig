@@ -1,9 +1,12 @@
-{% extends 'base.html.twig' %}
+{# templates/category/show.html.twig #}
+{% extends 'blog_template.html.twig' %}
 
-{% block title %}Category{% endblock %}
+{% block title %}{{ parent() }} Accueil de l'Administration des Catégories | Voir la catégorie{% endblock %}
 
 {% block body %}
-    <h1>Category</h1>
+    {% block content %}
+        <h1>Contenu de la catégorie n°{{ category.title }}</h1>
+    {% endblock %}
 
     <table class="table">
         <tbody>

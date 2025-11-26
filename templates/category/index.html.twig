@@ -1,9 +1,12 @@
-{% extends 'base.html.twig' %}
+{# templates/category/index.html.twig #}
+{% extends 'blog_template.html.twig' %}
 
-{% block title %}Category index{% endblock %}
+{% block title %}{{ parent() }} Accueil de l'Administration des Catégories{% endblock %}
 
 {% block body %}
-    <h1>Category index</h1>
+    {% block content %}
+        <h1>Accueil de l'Administration des Catégories</h1>
+    {% endblock %}
 
     <table class="table">
         <thead>

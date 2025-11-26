@@ -1,11 +1,14 @@
-{% extends 'base.html.twig' %}
+{# templates/article/new.html.twig #}
+{% extends 'blog_template.html.twig' %}
 
-{% block title %}New Article{% endblock %}
+{% block title %}{{ parent() }} Accueil de l'Administration d'Article | Création d'un nouvel article{% endblock %}
 
 {% block body %}
-    <h1>Create new Article</h1>
+    {% block content %}
+        <h1>Ajouter un article</h1>
+    {% endblock %}
 
     {{ include('article/_form.html.twig') }}
 
-    <a href="{{ path('app_article_index') }}">back to list</a>
+    <a href="{{ path('app_article_index') }}">Retour à la liste</a>
 {% endblock %}
