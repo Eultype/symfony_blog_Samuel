@@ -1,5 +1,7 @@
 <?php
 
+// src/Form/CategoryType.php
+
 namespace App\Form;
 
 use App\Entity\Article;
@@ -19,8 +21,12 @@ class CategoryType extends AbstractType
             ->add('description')
             ->add('articles', EntityType::class, [
                 'class' => Article::class,
-                'choice_label' => 'id',
+                'choice_label' => 'title',
                 'multiple' => true,
+                // pour avoir des checkbox
+                'expanded' => true,
+                // pour endre le champ optionnel
+                'required' => false,
             ])
         ;
     }
