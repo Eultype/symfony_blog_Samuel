@@ -26,8 +26,12 @@ final class ArticleController extends AbstractController
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $article = new Article();
-        $form = $this->createForm(ArticleType::class, $article);
+        $form = $this->createForm(ArticleType::class, $article,
+            // ajout des options pour le formulaire, ici ne pas afficher le champ createAt
+            ['is_create' => true]);
         $form->handleRequest($request);
+        // on met le jour par défaut :
+        $article->setCreateAt(new \DateTimeImmutable());
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($article);
